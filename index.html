@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>EKINGS WEBSITE</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="style.css" rel="stylesheet" />
+        <style>
+            /* Background image and overlay for homepage */
+            header.masthead {
+                background-image: url('background.jpg'); /* Replace 'your-image.jpg' with your image path */
+                background-size: cover; /* Cover the area */
+                background-position: center; /* Center the image */
+                background-attachment: fixed; /* Keep the background fixed when scrolling */
+                position: relative; /* For overlay positioning */
+                color: white; /* Ensure text color is white */
+            }
+        
+            /* Add a dark overlay on top of the background image */
+            header.masthead::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+                z-index: 1; /* Place it behind the content */
+            }
+        
+            /* Style the content within the header */
+            header.masthead .container {
+                position: relative; /* Keep text above the overlay */
+                z-index: 2;
+            }
+        
+            /* Add text shadow for better readability */
+            header.masthead h1,
+            header.masthead p {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            }
+            #portfolio .img-fluid {
+    padding: 10px; /* Adjust the padding value as needed */
+    background-color: #f9f9f9; /* Optional: Add a background to highlight padding */
+    border-radius: 5px; /* Optional: Add rounded corners */
+
+}
+.navbar .btn-primary {
+    margin-left: auto; /* Push to the right */
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .btn-primary {
+        margin-top: 10px; /* Adjust for mobile view */
+    }
+}
+.custom-table {
+    margin-bottom: 15px; /* Adjust the value as needed */
+}
+table {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+#services .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ /* Hover effect for CardView */
+ .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    }
+
+    .card:hover {
+        transform: translateY(-10px); /* Lift the card up slightly */
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+    }
+
+    .card-body {
+        transition: background-color 0.3s ease;
+    }
+
+    .card:hover .card-body {
+        background-color: #f0f0f0; /* Light background color on hover */
+    }
+   /* Add border radius to the card and images */
+.card {
+    border-radius: 15px; /* Rounds the corners of the card */
+    overflow: hidden; /* Ensures the image fits inside the card without overflow */
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 250px; /* Adjust the height as needed */
+    border-bottom-left-radius: 15px; /* Round the bottom left corner of the image */
+    border-bottom-right-radius: 15px; /* Round the bottom right corner of the image */
+}
+
+
+        </style>
+        
+    </head>
+    <section id="parallaxSection" class="parallax-section">
+        <div class="content">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">EKINGS</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#services">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ser">Activities</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services2">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                      <!-- Watch Now Button -->
+                      <button class="btn btn-primary btn-sm ms-3" data-bs-toggle="modal" data-bs-target="#videoModal">Watch Now</button>
+                    </div>
+                </div>
+            </nav>
+    
+            <!-- Video Modal -->
+            <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="videoModalLabel">Watch Our Video</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <video id="videoPlayer" width="100%" controls>
+                                <source src="vid.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Masthead-->
+        <header class="masthead">
+            
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">EKINGS RECREATIONAL PARK AND CAMP</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">"Find Your Path, Blaze New Trails – Camp Awaits!</p>
+                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Quick Overview</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">Ekings Recreational Park and Camp in Pandan, antique, is a prime ecotourism destination in the Philippines, offering eco-friendly activities and promoting sustainable tourism. It balances recreational opportunities with environmental conservation, supports local livelihoods, and serves as an educational platform for environmental stewardship, benefiting both tourists and the region's ecological well-being.</p>
+                        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+       <!-- Services-->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">About Us</h2>
+        <hr class="divider" />
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">History of the site or organization.</h3>
+                        <p class="text-muted mb-0">Ekings Recreational Park and Camp was develop during pandemic time and was started on December 2021. It was named Ekings Over landing before but it was decided to change its name to Ekings Recreational Park and Camp.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Conservation goals and efforts.</h3>
+                        <p class="text-muted mb-0">Ekings Recreational Park and Camp in Pandan, Antique, is committed to preserving its natural environment and promoting sustainable development. Its conservation goals include maintaining the pristine beauty.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Mission</h3>
+                        <p class="text-muted mb-0">To provide every guest a welcoming and feel at home feeling with sustainable environment space where they can connect with nature, relax and create lasting memories together with families, friends, and love ones. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">Vision</h3>
+                        <p class="text-muted mb-0">To be the ultimate destination for outdoor adventure and relaxation, fostering a deep connection with nature through memorable camping experiences and thrilling activities for all ages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Portfolio-->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Ecotourism Attractions</h2>
+        <hr class="divider" />
+      
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
+                            <img class="img-fluid" src="aljune.jpg" height="50px" alt="..." />
+                            <div class="portfolio-box-caption">
+                               
+                                <div class="project-name">
+                                    Ekings Recreational Park and Camp is home to important mangrove ecosystems that protect the coast, support marine life, and help combat climate change. Visitors can explore these areas through tours and contribute to conservation efforts, such as mangrove planting. The park promotes sustainability while offering educational and recreational experiences.
+                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
+                            <img class="img-fluid" src="fd.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                               
+                                <div class="project-name">Landscapes
+                                    Ekings Recreational Park and Camp features a diverse landscape with lush forests, serene rivers, vibrant mangroves. It offers scenic views, well-maintained trails, and peaceful spots for camping, making it a perfect destination for nature lovers.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
+                            <img class="img-fluid" src="yats.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                               
+                                <div class="project-name">Ekings Recreational Park and Camp is a sanctuary for vital mangrove ecosystems that play a crucial role in protecting the coastline, supporting marine life, and mitigating climate change. Visitors can take guided tours to explore these unique ecosystems and participate in hands-on conservation efforts, like planting mangroves. </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
+                            <img class="img-fluid" src="ye.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                               
+                                <div class="project-name">The park champions sustainability, providing both educational opportunities and recreational activities in a natural setting. </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
+                            <img class="img-fluid" src="last.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                               
+                                <div class="project-name">Ekings Recreational Park and Camp is a vital area that hosts important mangrove ecosystems, essential for coastal protection, marine life support, and combating climate change. Visitors have the opportunity to explore these areas through guided tours and actively contribute to conservation efforts like planting mangroves. </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+                            <img class="img-fluid" src="fami.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                
+                                <div class="project-name">The landscape of Ekings is diverse, featuring dense forests, tranquil rivers, and flourishing mangroves, creating a harmonious environment. With scenic vistas, well-maintained trails, and serene camping spots, it's an ideal retreat for those seeking a peaceful connection with nature.</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<!--Activities and Experiences-->
+<section class="page-section" id="ser">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Activities and Experiences</h2>
+        <hr class="divider" />
+        
+        <!-- New CardViews -->
+        <div class="row gx-4 gx-lg-5">
+            <!-- First New Card -->
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="mb-2"><i class="bi-campground fs-1 text-primary"></i></div>
+                        <p class="text-muted mb-0">Ekings recreational park and camp supporting and promoting local businesses like restaurants and talipapa nearby the place by letting their Guests buy foods in those restaurants. Because of this, it can offer the opportunity to interact with locals and learn about their culture.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second New Card -->
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <p class="text-muted mb-0">  Ekings Recreational Park and Camp offers several conservation volunteer programs that provide meaningful opportunities to contribute to the park’s environmental preservation. Volunteers can participate in the Mangrove Restoration Program, where they help plant and maintain vital coastal habitats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Modal -->
+        <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="mapModalLabel">Location Maps</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Map 1</h6>
+                                <img src="map.jpg" alt="Map 1" class="img-fluid" />
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Map 2</h6>
+                                <img src="map23.jpg" alt="Map 2" class="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Table (Right Side) -->
+<table class="custom-table">
+    <div class="row mt-5">
+        <div class="col-lg-6 offset-lg-7">
+            <table class="table table-bordered mt-5">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Price</th>
+                        <th>Duration</th>
+                        <th>With Tour Guide</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kayak</td>
+                        <td>₱1,000</td>
+                        <td>2 hours</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Paddle Board</td>
+                        <td>₱500 per person</td>
+                        <td>2 hours</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Swimming</td>
+                        <td>₱Free</td>
+                        <td>Open</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Camping</td>
+                        <td>₱Varies</td>
+                        <td>Overnight</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</table>
+</section>
+
+<!-- Sustainability and Conservation Efforts -->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Sustainability and Conservation Efforts</h2>
+        <hr class="divider" />
+
+        <!-- Typhoon Risk Management Framework -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title">1. Typhoon Risk Management Framework</h4>
+                <p>Early Warning Systems: Establish partnerships with local weather agencies to receive real-time updates and alerts about approaching typhoons. The park can set up a notification system for visitors and staff to take preventive action well in advance.</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <p>Infrastructure Reinforcement: Ensure all buildings, camping areas, and other structures are typhoon-resistant by reinforcing roofs, windows, and doors. Trees and plants should be checked for stability to prevent accidents during strong winds.</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <p>Evacuation Plans: Create clear, accessible evacuation routes for guests and staff, with emergency shelters located in safer areas. Regular drills should be conducted to ensure everyone knows the procedures during an emergency.</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <p>Emergency Supplies: Stock essential items such as first aid kits, non-perishable food, drinking water, flashlights, and power banks. Ensure that staff members are trained in emergency response procedures.</p>
+            </div>
+        </div>
+
+        <!-- Sustainability Initiatives -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title">2. Sustainability Initiatives</h4>
+                <p>Eco-friendly Infrastructure: Utilize sustainable building materials, energy-efficient lighting, and rainwater collection systems to minimize the park's environmental footprint.</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <p>Waste Management: Implement waste segregation and recycling programs throughout the park. Encourage guests to reduce, reuse, and recycle their waste, especially plastics, to prevent environmental harm.</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <p>Conservation Education: Organize workshops and informational sessions about local ecosystems, such as the endangered species of the Malumpati Watershed and the importance of preserving the region's biodiversity.</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <p>Restoration Projects: Initiate reforestation or mangrove restoration projects around the park to mitigate the impacts of natural disasters like typhoons and reduce the risk of soil erosion.</p>
+            </div>
+        </div> 
+    </div>
+</section>
+<!-- Visitors Information -->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Visitors Information</h2>
+        <!-- Add a custom class to the <hr> -->
+        <hr class="divider colored-divider" />
+
+        <!-- How to get there -->
+        <div class="d-flex justify-content-between align-items-center">
+            <h4>How to get there:</h4>
+            <!-- Add Map Button -->
+            <div class="map-button-container">
+                <button id="viewMapButton" class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#mapModal">
+                    View Map
+                </button>
+            </div>
+        </div>
+        <p>MAP</p>
+
+        <!-- Transportation Options -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title">TRANSPORTATION OPTION:</h4>
+                <ul>
+                    <li>BUS</li>
+                    <li>VAN</li>
+                    <li>PERSONAL SERVICE</li>
+                    <li>TRICYCLE</li>
+                    <li>MOTORCYCLE</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Travel Tips -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title">TRAVEL TIPS</h4>
+                <p>If you're going to commute to go there in Ekings Recreational Park and Camp, you are going to drop first in Pandan terminal and have a tricycle ride to go there in Ekings. If you have personal service, you can use Google Map if you're unfamiliar with the place of Ekings Recreational Park and Camp.</p>
+            </div>
+        </div>
+
+        <!-- Best Time to Visit -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title">BEST TIME TO VISIT:</h4>
+                <ul>
+                    <li>Holidays</li>
+                    <li>Long weekend</li>
+                    <li>Summer</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rules and Guidelines -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title">Rules and Guidelines:</h4>
+                <p>Visiting Ekings Recreational Park and Camp can be a memorable experience if planned carefully. To ensure a safe and enjoyable trip, it’s essential to follow park rules and guidelines, such as avoiding swimming in the river after 5 PM for safety. Pack weather-appropriate clothing, eco-friendly gear, and essentials like sunscreen, insect repellent, and reusable water bottles. Respect nature by disposing of waste properly and staying on designated trails. Engage in the park’s activities, such as hiking, birdwatching, or participating in eco-educational workshops. If camping, ensure your equipment complies with fire safety rules and be mindful of other visitors by maintaining a peaceful environment. Always carry a map or GPS device, a first-aid kit, and emergency supplies. By embracing responsible practices, you can enjoy the beauty of Ekings Recreational Park while helping preserve it for future visitors.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Sustainability and Conservation Efforts -->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Amenities and Accomodation</h2>
+        <hr class="divider" />
+
+         <!-- Available Facilities -->
+         <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-restroom"></i> Available Facilities:</h5>
+                <ul>
+                    <li>Restrooms</li>
+                    <li>Shower rooms</li>
+                    <li>Gazebo</li>
+                    <li>Cottage</li>
+                    <li>Camping Sites</li>
+                    <li>Teepee House</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dining Options -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-utensils"></i> Dining Options:</h5>
+                <ul>
+                    <li>Grilling Stations</li>
+                    <li>Picnic Area</li>
+                    <li>Cooking service</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sustainable Accommodations -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-bed"></i> Highlight Sustainable Accommodations:</h5>
+                <ul>
+                    <li>Cottage Fan Room</li>
+                    <li>Aircon Room</li>
+                    <li>Family Room</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Direct Message -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-envelope"></i> Direct message their Facebook Page:</h5>
+                <p><a href="https://www.facebook.com/ekingsparkandcamp" target="_blank">Visit their Facebook Page</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Booking Information -->
+<section class="page-section" id="booking">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Booking Information</h2>
+        <hr class="divider" />
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-calendar-check"></i> How to Book:</h5>
+                <p>To book your stay at Ekings Recreational Park and Camp, you can contact us through the following options:</p>
+                <ul>
+                    <li>Email: <a href="mailto:info@ekingspark.com">info@ekingspark.com</a></li>
+                    <li>Phone: +123 456 7890</li>
+                    <li>Facebook: <a href="https://www.facebook.com/ekingsparkandcamp" target="_blank">Visit our Facebook Page</a></li>
+                </ul>
+                <p>Please specify the accommodation type and dates for your booking. Our team will get back to you to confirm your reservation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sustainability and Conservation Efforts -->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Photo and Video Gallery</h2>
+        <hr class="divider" />
+
+        <div class="row">
+            <!-- Before Pictures -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="462566163_3723079411242453_8390858254018478201_n.jpg" class="card-img-top img-fluid" alt="Before Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Before</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="462569960_3998973003648642_4584492357807831127_n.jpg" class="card-img-top img-fluid" alt="Before Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Before</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row to separate before and after images -->
+        <div class="row">
+            <!-- After Pictures -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="after.jpg" class="card-img-top img-fluid" alt="After Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">After</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="after1.jpg" class="card-img-top img-fluid" alt="After Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">After</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!-- Watch Video Button -->
+<div class="text-center">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal">Watch Video</button>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="videoModalLabel">Watch Our Video</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <video id="videoPlayer1" width="100%" controls>
+                    <source src="vid.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Blog Section -->
+<section class="page-section" id="services2">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Blog Section</h2>
+        <hr class="divider" />
+
+        <div class="row">
+            <!-- Article 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Rise of Ecotourism: Why Sustainable Travel Matters</h5>
+                        <p class="card-text">Explore how ecotourism has become a global trend, emphasizing sustainable practices, supporting local communities, and protecting natural habitats. Learn how parks like Ekings Recreational Park and Camp contribute to this movement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Wildlife Species to Watch at Ekings Recreational Park</h5>
+                        <p class="card-text">Discover the unique wildlife found within the park, including birds, snakes. This guide offers tips on ethical wildlife observation, ensuring minimal disruption to their natural behavior.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Simple Conservation Tips for Every Camper</h5>
+                        <p class="card-text">Learn practical steps to reduce your environmental impact while camping, such as using eco-friendly products, minimizing waste, and practicing “Leave No Trace” principles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cleanup Drives: Small Steps with Big Impacts</h5>
+                        <p class="card-text">This article highlights the importance of cleanup drives in maintaining ecosystems and how volunteer efforts make a difference in places like Ekings Recreational Park.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial and Review Section -->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Testimonial and Review</h2>
+        <hr class="divider" />
+
+        <!-- Carousel for Testimonials -->
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Testimonial 1 -->
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="User Icon" class="rounded-circle me-3" style="width: 40px; height: 40px;">
+                                <h5 class="card-title">Sam Bernaldez (2024)</h5>
+                            </div>
+                            <p class="card-text">"We had an amazing camp experience at Eking's Recreational Park. We were delighted and gracious with the warm welcome by the staff and the beautiful landscape of the place: The campground is perfect for hikers who would want to stay overnight before or after climbing the breathtaking and scenic mountains of Antique. There's a spacious kitchen area where you can prepare your food and refreshments. There's also a separate comfort room and shower room that are so clean and the water is always on use. They serve delicious breakfast and hot coffee to start your day off. Namit namit gid ang Tocilog, I can attest to that👍. Again, Thank you for the wonderful and friendly staff."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="User Icon" class="rounded-circle me-3" style="width: 40px; height: 40px;">
+                                <h5 class="card-title">Jhon Gerome Ebon Andrade (2023)</h5>
+                            </div>
+                            <p class="card-text">"Highly Recommended to the Public and anyone who likes adventure, relaxation and want some place to relax. Place is one of the best Eking's developing and growing place you can enjoy with your family, jowa or barkada..."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="User Icon" class="rounded-circle me-3" style="width: 40px; height: 40px;">
+                                <h5 class="card-title">Glaiza Glaiza (2021)</h5>
+                            </div>
+                            <p class="card-text">"Very peaceful and nature-friendly. Super nice and clean ang room plus ang CR dako and complete gd from soap, shampoo, towels. Worth it gd ang 4 hrs travel from city to pandan. Definitely mabalik gd kmi."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    
+<!-- Contact-->
+<section class="page-section" id="contact">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Contact Us</h2>
+        <hr class="divider" />
+        
+        <!-- Contact Info Card centered -->
+        <div class="row justify-content-center">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Contact Information</h5><br>
+                        <p><strong>Email:</strong> junakzsanchez@gmail.com</p>
+                        <p><strong>Phone #:</strong> 0999 997 5759</p>
+                        <p><strong>Social Media:</strong> <a href="https://www.facebook.com/ekingsparkandcamp" target="_blank">Facebook</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Events and Updates -->
+<section class="page-section" id="events">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Events and Updates</h2>
+        <hr class="divider mx-auto" />
+
+        <!-- Row for Cards -->
+        <div class="row">
+            <!-- Card for Environmental Awareness Events -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Environmental Awareness Events</h5>
+                        <p>
+                            Ekings Recreational Park and Camp offers various events aimed at promoting environmental awareness and sustainability. These include cleanup drives, where participants help maintain the park’s cleanliness by collecting and properly disposing of waste, ensuring the preservation of its natural beauty. The park also organizes tree planting activities, allowing visitors to contribute to reforestation efforts and support the local ecosystem. Additionally, seminars on environmental conservation are held, educating participants about sustainable practices, the importance of protecting nature, and how to reduce their ecological footprint. These events not only enhance the park’s environment but also inspire visitors to adopt eco-friendly habits in their daily lives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card for Seasonal Activities -->
+            <div class="col-md-6 mb-1">
+                <div class="card">
+                    <div class="card-body" style="padding-top: 0;">
+                        <h5 class="card-title text-center">Seasonal Activities</h5>
+                        <ul class="text-start">
+                            <li>Airsoft Gun</li>
+                            <li>Kayaking</li>
+                            <li>Paddle Board</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Events and Updates -->
+<section class="page-section" id="events">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Booking and Pricing</h2>
+        <hr class="divider" />
+
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Package Deals:</h5>
+                    <p class="card-text">Cottage Fan Room for 2 pax - ₱1,200 per night with Common CR</p>
+                  
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Cottage Fan Room for 3 pax - ₱1,500 per night with Common CR and Breakfast for 2 persons</p>
+                    <img src="fan.jpg" height="300px" width = "300px "Fan Room for 3 Pax" class="room-image">
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Aircon Room for 2 pax - ₱1,500 per night with Common CR and Breakfast for 2 persons</p>
+                    <img src="cottage.jpg" height="300px" width = "300px " alt="Aircon Room" class="room-image">
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Family Room (Air-conditioned room) for 4 pax - ₱4,500 per night with CR and Breakfast for 4 persons</p>
+                    <img src="df.jpg" height="300px" width = "300px " alt="Family Room" class="room-image">
+                </div>
+            </div>
+          
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Online Booking System:</h5>
+                    <p class="card-text">Social Media Links: <a href="https://www.facebook.com/ekingsparkandcamp" target="_blank">Facebook</a></p>
+                    <p class="card-text">Email: <a href="mailto:junaksanchez@gmail.com">junaksanchez@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+          <!-- Events and Updates -->
+<section class="page-section" id="events">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Call to Attention</h2>
+        <hr class="divider" />
+        <div class="container">
+            <!-- Booking Tours Section -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Booking Tours</h5>
+                <p class="card-text">Book a Tour Now</p>
+                <p class="card-text">Plan your adventure today!</p>
+                <button class="btn btn-primary">Book Now</button>
+              </div>
+            </div>
+            
+            <!-- Newsletter Subscription Section -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Newsletter Subscription</h5>
+                <p class="card-text">Subscribe to Our Newsletter</p>
+                <p class="card-text">Stay updated with the latest events, news, and eco-tips!</p>
+                <button class="btn btn-success">Subscribe</button>
+              </div>
+            </div>
+            
+            <!-- Donations Section -->
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Donations</h5>
+                <p class="card-text">Support Conservation Efforts</p>
+                <p class="card-text">Help us protect and preserve the environment with your generous donation.</p>
+                <button class="btn btn-warning">Donate Now</button>
+              </div>
+            </div>
+          </div>
+          
+
+        <!-- Footer-->
+        <footer class="footer py-4 bg-light">
+            <div class="container px-4 px-lg-5">
+                <div class="small text-center text-muted">Copyright &copy; Your Website 2024</div>
+            </div>
+        </footer>
+        <!-- Core theme JS-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simple-lightbox.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0-beta3/js/all.min.js"></script>
+        <script src="js/scripts.js">
+       
+        // Select the button and map container
+        const viewMapButton = document.getElementById('viewMapButton');
+        const mapContainer = document.getElementById('mapContainer');
+    
+        // Add a click event listener to the button
+        viewMapButton.addEventListener('click', () => {
+            // Toggle the visibility of the map container
+            if (mapContainer.style.display === 'none' || mapContainer.style.display === '') {
+                mapContainer.style.display = 'block';
+            } else {
+                mapContainer.style.display = 'none';
+            }
+        });
+         // Add event listener to the "Watch Now" button
+    document.querySelector('.btn-primary').addEventListener('click', function() {
+        // Hide the homepage content and show the video section
+        document.querySelector('header.masthead').style.display = 'none';
+        document.getElementById('watch').style.display = 'block';
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+    const videoModal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer1');
+
+    // Play video when the modal is shown
+    videoModal.addEventListener('shown.bs.modal', function () {
+        videoPlayer.play();
+    });
+
+    // Pause video and reset it when the modal is hidden
+    videoModal.addEventListener('hidden.bs.modal', function () {
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0; // Reset the video to the start
+    });
+});
+
+    
+    </script>
+
+      
+    </body>
+</html>
